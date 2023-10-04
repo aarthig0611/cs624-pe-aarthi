@@ -10,6 +10,6 @@ In terms of processing this app has requirements. It simply renders the input da
 
 As for the output it consists of three text elements within the apps interface. These elements present the name, degree program and school on a yellow background.
 
-
+![output_snapshot](https://github.com/aarthig0611/cs624-pe-aarthi/assets/115338039/c6883002-716c-4d6d-8ff2-447f1a5436a5)
 
 To summarize, this "HelloWorld" mobile app operates by taking static input, processes it by rendering the information on the screen, and generates a visual output that displays your name, degree program, and school. This analysis demonstrates how the app adheres to the input-process-output model.
