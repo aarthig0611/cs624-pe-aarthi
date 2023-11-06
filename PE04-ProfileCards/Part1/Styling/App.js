@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, Text } from "react-native";
 
 export default class App extends Component {
   render() {
@@ -7,9 +7,25 @@ export default class App extends Component {
       <View style={styles.container}>
         <View style={styles.cardContainer} >
           <View style={styles.cardImageContainer} >
-            <Image 
-                  style={styles.cardImage}
+            <Image style={styles.cardImage}
                   source={require("./icons8-user-100.png")} />
+          </View>
+          <View>
+            <Text style={styles.cardName}>
+              John Doe
+            </Text>
+          </View>
+          <View style={styles.cardOccupationContainer}>
+            <Text style={styles.cardOccupation}>
+              React Native Developer
+            </Text>
+          </View>
+          <View>
+            <Text style={styles.cardDescription}>
+              John is a really great JavaScript developer. He 
+              loves using JS to build React Native applications 
+              for iOS and Android.
+            </Text>
           </View>
         </View>
       </View>
@@ -49,5 +65,28 @@ const styles = StyleSheet.create({
   cardImage: {
     width: 80,
     height: 80
+  },
+  cardName: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 24,
+    marginTop: 30,
+  },
+  cardOccupationContainer: {
+    borderColor: 'black',
+    borderBottomWidth: 3
+  },
+  cardOccupation: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    marginTop: 10,
+    marginBottom: 10
+  },
+  cardDescription: {
+    fontSize: 14,
+    marginTop: 10,
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 10
   }
 });
