@@ -11,6 +11,41 @@ const data = [{
     occupation: 'React Native Developer',
     description: 'John is a really great Javascript developer. ' + 'He loves using JS to build React Native applications ' + 'for iOS and Android',
     showThumbnail: true
+  },
+  {
+    image: userImage,
+    name: 'John Doe',
+    occupation: 'React Native Developer',
+    description: 'John is a really great Javascript developer. ' + 'He loves using JS to build React Native applications ' + 'for iOS and Android',
+    showThumbnail: true
+  },
+  {
+    image: userImage,
+    name: 'John Doe',
+    occupation: 'React Native Developer',
+    description: 'John is a really great Javascript developer. ' + 'He loves using JS to build React Native applications ' + 'for iOS and Android',
+    showThumbnail: true
+  },
+  {
+    image: userImage,
+    name: 'John Doe',
+    occupation: 'React Native Developer',
+    description: 'John is a really great Javascript developer. ' + 'He loves using JS to build React Native applications ' + 'for iOS and Android',
+    showThumbnail: true
+  },
+  {
+    image: userImage,
+    name: 'John Doe',
+    occupation: 'React Native Developer',
+    description: 'John is a really great Javascript developer. ' + 'He loves using JS to build React Native applications ' + 'for iOS and Android',
+    showThumbnail: true
+  },
+  {
+    image: userImage,
+    name: 'John Doe',
+    occupation: 'React Native Developer',
+    description: 'John is a really great Javascript developer. ' + 'He loves using JS to build React Native applications ' + 'for iOS and Android',
+    showThumbnail: true
   }
 ];
 
@@ -75,18 +110,22 @@ export default class App extends Component {
   render() {
     const list = this.state.data.map(function(item, index) { 
       const { image, name, occupation, description, showThumbnail } = item;
-      return <ProfileCard key={'card-' + index}
-                   image={image}
-                   name={name}
-                   occupation={occupation}
-                   description={description}
-                   onPress={this.handleProfileCardPress.bind(this, index)}
-                   showThumbnail={showThumbnail}/>
+      return(
+        <ProfileCard key={'card-' + index}
+                      image={image}
+                      name={name}
+                      occupation={occupation}
+                      description={description}
+                      onPress={() => this.handleProfileCardPress(index)}
+                      showThumbnail={showThumbnail}/>
+      ); 
     }, this);
 
     return (
       <View style={styles.container}>
-        {list} 
+        <View style={[styles.wrapContainer]}>
+          {list} 
+        </View>
       </View>
     );
   }
@@ -101,14 +140,16 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   cardContainer: {
+    alignSelf: 'center',
     alignItems: 'center',
     borderColor: 'black',
     borderWidth: 3,
     borderStyle: 'solid',
     borderRadius: 20,
     backgroundColor: profileCardColor,
-    width: 300,
-    height: 400,
+    width: 140,
+    marginBottom: 20,
+    height: 200,
     ...Platform.select({ 
       ios: {
         shadowColor: 'black',
@@ -127,11 +168,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 3,
     borderColor: 'black',
-    width: 120,
-    height: 120,
+    width: 60,
+    height: 60,
     borderRadius: 60,
-    marginTop: 30,
-    paddingTop: 15,
+    marginTop: 15,
+    paddingTop: 7,
     ...Platform.select({ 
       ios: {
         shadowColor: 'black',
@@ -148,14 +189,14 @@ const styles = StyleSheet.create({
     })
   },
   cardImage: {
-    width: 80,
-    height: 80
+    width: 40,
+    height: 40
   },
   cardName: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 24,
-    marginTop: 30,
+    fontSize: 12,
+    marginTop: 15,
     textShadowColor: 'black',
     textShadowOffset: {
         height: 5,
@@ -165,21 +206,28 @@ const styles = StyleSheet.create({
   },
   cardOccupationContainer: {
     borderColor: 'black',
-    borderBottomWidth: 3
+    borderBottomWidth: 2
   },
   cardOccupation: {
+    fontSize: 8,
     fontWeight: 'bold', 
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 5,
+    marginBottom: 5,
   },
   cardDescription: {
+    fontSize: 7,
     fontStyle: 'italic', 
-    marginTop: 10,
-    marginRight: 40,
-    marginLeft: 40,
+    marginTop: 5,
+    marginRight: 15,
+    marginLeft: 15,
     marginBottom: 10
   },
   cardThumbnail: {
-    transform: [{scale: 0.2}]
+    transform: [{scale: 0.5}]
+  },
+  wrapContainer: {
+    flexDirection: 'row-reverse',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
   },
 });
